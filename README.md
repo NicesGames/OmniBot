@@ -2,6 +2,7 @@
 your self-learning neural network in Discord.
 
 OmniDed - self-learning ii in discord
+
 Files:
 .env - there api gemini and discord token
 index.js - main code (for mode selection)
@@ -15,6 +16,7 @@ Commands
 !ds (request)
 !feedback (score from 1 to 10)
 !help
+
 Startup
 1. open cmd
 2. if you have not installed the libraries then npm install
