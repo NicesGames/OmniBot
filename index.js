@@ -1,27 +1,52 @@
 const readline = require('readline');
+const { startTrainingMode } = require('./train.js');
+const { startResponseMode } = require('./respond.js');
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
-console.log("Выберите режим:");
-console.log("1 - Обучение");
-console.log("2 - Ответ на вопросы");
-console.log("3 - Обучение с ИИ");
+function promptMode() {
+  console.log('Select mode:');
+  console.log('1 - Training');
+  console.log('2 - Question answering');
+  console.log('3 - Training with AI');
+  rl.question('Enter mode number: ', (mode) => {
+    try {
+      switch (mode.trim()) {
+        case '1':
+          console.log('INFO: Training mode started');
+          if (typeof startTrainingMode !== 'function') {
+            throw new Error('startTrainingMode is not defined in train.js');
+          }
+          startTrainingMode(false);
+          break;
+        case '2':
+          console.log('INFO: Question answering mode started');
+          if (typeof startResponseMode !== 'function') {
+            throw new Error('startResponseMode is not defined in respond.js');
+          }
+          startResponseMode();
+          break;
+        case '3':
+          console.log('INFO: AI training mode started');
+          if (typeof startTrainingMode !== 'function') {
+            throw new Error('startTrainingMode is not defined in train.js');
+          }
+          startTrainingMode(true);
+          break;
+        default:
+          console.log('ERROR: Invalid mode. Please select 1, 2, or 3.');
+          promptMode();
+          break;
+      }
+    } catch (err) {
+      console.error('ERROR: Mode start failed - ' + err.message);
+      console.error(err.stack);
+      promptMode();
+    }
+  });
+}
 
-rl.question("Введите номер режима: ", (answer) => {
-  if (answer === '1') {
-    console.log("[ИНФО] Запущен режим обучения");
-    require('./train.js').startTrainingMode(false);
-  } else if (answer === '2') {
-    console.log("[ИНФО] Запущен режим ответа на вопросы");
-    require('./respond.js').startResponseMode();
-  } else if (answer === '3') {
-    console.log("[ИНФО] Запущен режим обучения с ИИ");
-    require('./train.js').startTrainingMode(true);
-  } else {
-    console.log("[ОШИБКА] Неверный ввод. Пожалуйста, выберите 1, 2 или 3.");
-  }
-  rl.close();
-});
+promptMode();

@@ -1,7 +1,7 @@
 {
   "name": "discord-ai-bot",
   "version": "1.0.0",
-  "description": "your self-learning neural network in Discord.",
+  "description": "AI-powered Discord bot",
   "main": "index.js",
   "scripts": {
     "start": "node --max-old-space-size=4096 index.js"
