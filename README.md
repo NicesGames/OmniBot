@@ -11,6 +11,7 @@ package-lock.json
 respond.js - code for neural network response
 server.txt - id of servers that have access to !ds
 train.js - code for ii training
+pdf.py - converts websites to pdf
 Commands
 !ai (request)
 !ds (request)
