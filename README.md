@@ -1,4 +1,4 @@
-# OmniBot
+# OmniDed
 your self-learning neural network in Discord.
 
 OmniDed - self-learning ii in discord
