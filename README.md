@@ -33,6 +33,7 @@ project/
 ├── index.js                     # Main bot code
 ├── package.json                 # Dependencies
 ├── pdf.py                       # website to pdf
+├── гкдюече                      # for pdf.py
 ├── node_modules/
 ```
 
