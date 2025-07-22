@@ -1,24 +1,23 @@
 {
   "name": "discord-ai-bot",
   "version": "1.0.0",
-  "description": "AI-powered Discord bot",
+  "description": "Discord bot with self-learning neural network",
   "main": "index.js",
   "scripts": {
-    "start": "node --max-old-space-size=4096 index.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "axios": "^1.7.7",
-    "cheerio": "^1.0.0",
-    "compromise": "^14.13.0",
-    "discord.js": "^14.16.2",
-    "dotenv": "^16.4.5",
+    "axios": "^1.10.0",
+    "brain.js": "^2.0.0-beta.22",
+    "discord.js": "^14.21.0",
+    "dotenv": "^16.6.1",
     "franc": "^6.2.0",
-    "iconv-lite": "^0.6.3",
-    "mammoth": "^1.8.0",
-    "p-queue": "^8.0.1",
+    "heapdump": "^0.3.15",
+    "node-html-parser": "^6.1.13",
     "pdf-parse": "^1.1.1",
-    "sharp": "^0.33.5",
-    "sqlite3": "^5.1.7",
-    "unorm": "^1.6.0"
-  }
+    "stopword": "^3.1.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
